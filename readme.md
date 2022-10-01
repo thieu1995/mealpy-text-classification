@@ -28,6 +28,25 @@ Open terminal in windows:
 ```
 
 
+# How to run
+
+Please check out all the normal model first by running the script that end with word "normal". For example:
+
+```code 
+1. run_svc_normal.py
+2. run_nb_normal.py
+```
+
+After that you can check out how to use MEALPY with above models by running the script end with word "mealpy". For 
+example:
+
+```code 
+1. run_svc_mealpy.py
+2. run_nb_mealpy.py
+```
+
+
+
 # Cite Us
 
 If you are using mealpy in your project, we would appreciate citations:
