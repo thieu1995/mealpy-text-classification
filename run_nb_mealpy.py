@@ -42,9 +42,9 @@ if __name__ == "__main__":
     print(f"Best fitness (accuracy score) value: {1 - best_fitness}")
     print(f"Best parameters: {best_solution}")
 
-    ###### Get the best tuned neural network to predict test set
-    best_network = problem.generate_trained_model(best_solution)
-    y_valid = best_network.predict(df["X_valid"])
+    ###### Get the best tuned model to predict test set
+    best_model = problem.generate_trained_model(best_solution)
+    y_valid = best_model.predict(df["X_valid"])
 
     evaluator = ClassificationMetric(df["y_valid"], y_valid, decimal=6)
     print(evaluator.get_metrics_by_list_names(["AS", "RS", "PS", "F1S", "F2S"]))

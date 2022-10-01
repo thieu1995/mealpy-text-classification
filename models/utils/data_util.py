@@ -6,14 +6,14 @@
 
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.model_selection import train_test_split
-from sklearn import model_selection, preprocessing, linear_model, naive_bayes, metrics, svm
-from sklearn import decomposition, ensemble
+# from sklearn import model_selection, preprocessing, linear_model, naive_bayes, metrics, svm
+# from sklearn import decomposition, ensemble
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 import numpy as np
 import xgboost, textblob, string
-from keras.preprocessing import text, sequence
-from keras import layers, models, optimizers
+# from keras.preprocessing import text, sequence
+# from keras import layers, models, optimizers
 
 
 def generate_data(path_to_data="data/corpus.txt", test_size=0.3):
@@ -149,15 +149,4 @@ def features_as_topic_models():
     # for i, topic_dist in enumerate(topic_word):
     #     topic_words = np.array(vocab)[np.argsort(topic_dist)][:-(n_top_words+1):-1]
     #     topic_summaries.append(' '.join(topic_words))
-
-
-
-
-
-
-
-
-
-
-
 

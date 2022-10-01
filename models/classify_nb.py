@@ -22,7 +22,6 @@ class ClassifyNB(Problem):
         self.name = name
 
     def decode_solution(self, solution):
-        # Naive Bayes has only 1 parameter alpha: float
         return {
             "alpha": solution[0],
             "fit_prior": bool(round(solution[1]))
