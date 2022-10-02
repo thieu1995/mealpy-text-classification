@@ -7,12 +7,11 @@
 4. Random Forest Model (Bagging Model)
 5. Boosting Model
 6. Multi-Layer Perceptron
-7. Deep Neural Network
-8. CNN
-9. LSTM
-10. GRU
-11. Bidirectional RNN
-12. Recurrent Convolutional Neural Network
+7. CNN
+8. LSTM
+9. GRU
+10. Bidirectional RNN
+11. Recurrent Convolutional Neural Network
 
 
 # Environments
