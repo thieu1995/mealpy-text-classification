@@ -11,6 +11,8 @@ from permetrics.classification import ClassificationMetric
 from mealpy.swarm_based import WOA
 
 """
+https://xgboost.readthedocs.io/en/stable/parameter.html
+
 Tuning hyper-parameter of Extreme Gradient Boosting (XGB) model with booster="gbtree" and:
 
 eta (learning_rate) [default=0.3, alias: learning_rate], range: [0,1]

@@ -16,6 +16,7 @@ class ClassifyXGB(Problem):
         self.name = name
 
     def decode_solution(self, solution):
+        ### https://xgboost.readthedocs.io/en/stable/parameter.html
         return {
             "learning_rate": solution[0],
             "min_split_loss": solution[1],
