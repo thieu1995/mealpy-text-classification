@@ -6,14 +6,9 @@
 
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.model_selection import train_test_split
-# from sklearn import model_selection, preprocessing, linear_model, naive_bayes, metrics, svm
-# from sklearn import decomposition, ensemble
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 import numpy as np
-import xgboost, textblob, string
-# from keras.preprocessing import text, sequence
-# from keras import layers, models, optimizers
 
 
 def generate_data(path_to_data="data/corpus.txt", test_size=0.3):
@@ -46,20 +41,22 @@ def generate_data(path_to_data="data/corpus.txt", test_size=0.3):
 
 ## Feature engineering section
 
-def features_as_count_vectors(trainDF, train_x, valid_x):
+def features_as_count_vectors(trainDF, train_x, valid_x, network=False):
     """
     Count Vector is a matrix notation of the dataset in which every row represents a document
     from the corpus, every column represents a term from the corpus, and every cell represents
     the frequency count of a particular term in a particular document.
     """
     # create a count vectorizer object
-    count_vect = CountVectorizer(analyzer='word', token_pattern=r'\w{1,}')
+    count_vect = CountVectorizer(analyzer='word')
     count_vect.fit(trainDF['text'])
 
     # transform the training and validation data using count vectorizer object
     X_train = count_vect.transform(train_x)
     X_valid = count_vect.transform(valid_x)
 
+    if network:
+        return X_train.toarray(), X_valid.toarray()
     return X_train, X_valid
 
 
