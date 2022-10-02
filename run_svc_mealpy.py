@@ -31,7 +31,7 @@ if __name__ == "__main__":
     df = generate_data()
     df["KERNEL_ENCODER"] = kernel_encoder
 
-    ## Tuning hyper-parameter of SVM model with Count Vectors feature engineering
+    ## Count Vectors feature engineering
     X_train, X_valid = features_as_count_vectors(df["trainDF"], df["train_x"], df["valid_x"])
     df["X_train"] = X_train
     df["X_valid"] = X_valid

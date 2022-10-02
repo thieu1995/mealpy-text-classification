@@ -24,7 +24,7 @@ if __name__ == "__main__":
     ## {"train_x": train_x, "y_train": train_y, "valid_x": valid_x, "y_valid": valid_y, "encoder": encoder, "trainDF": trainDF}
     df = generate_data()
 
-    ## Tuning hyper-parameter of Naive Bayes model with Count Vectors feature engineering
+    ## Count Vectors feature engineering
     X_train, X_valid = features_as_count_vectors(df["trainDF"], df["train_x"], df["valid_x"])
     df["X_train"] = X_train
     df["X_valid"] = X_valid
