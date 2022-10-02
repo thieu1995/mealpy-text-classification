@@ -4,7 +4,7 @@
 1. SVC (Support Vector Classification)
 2. NB (Naive Bayes)
 3. LC (Linear Classification)
-4. Bagging Model
+4. Random Forest Model (Bagging Model)
 5. Boosting Model
 6. Multi-Layer Perceptron
 7. Deep Neural Network
