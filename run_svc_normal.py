@@ -14,28 +14,28 @@ from models.utils.data_util import features_as_count_vectors, features_as_TF_IDF
 df = generate_data()
 
 
-## Naive Bayes on Count Vectors
+## Features as Count Vectors
 # X_train, X_valid = features_as_count_vectors(df["trainDF"], df["train_x"], df["valid_x"])
 # accuracy = training_process(SVC(), X_train, df["y_train"], X_valid, df["y_valid"])
 # print("NB, Count Vectors: ", accuracy)
 
 
 
-## Naive Bayes on Word Level TF IDF Vectors
+## Features as Word Level TF IDF Vectors
 # X_train, X_valid = features_as_TF_IDF_vectors(df["trainDF"], df["train_x"], df["valid_x"], kind="word")
 # accuracy = training_process(SVC(), X_train, df["y_train"], X_valid, df["y_valid"])
 # print("NB, WordLevel TF-IDF: ", accuracy)
 
 
 
-## Naive Bayes on Ngram Level TF IDF Vectors
+## Features as Ngram Level TF IDF Vectors
 # X_train, X_valid = features_as_TF_IDF_vectors(df["trainDF"], df["train_x"], df["valid_x"], kind="ngram")
 # accuracy = training_process(SVC(), X_train, df["y_train"], X_valid, df["y_valid"])
 # print("NB, N-Gram Vectors: ", accuracy)
 
 
 
-## Naive Bayes on Character Level TF IDF Vectors
+## Features as Character Level TF IDF Vectors
 X_train, X_valid = features_as_TF_IDF_vectors(df["trainDF"], df["train_x"], df["valid_x"], kind="char")
 accuracy = training_process(SVC(), X_train, df["y_train"], X_valid, df["y_valid"])
 print("NB, CharLevel Vectors: ", accuracy)
