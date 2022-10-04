@@ -5,9 +5,9 @@
 # --------------------------------------------------%
 
 from sklearn.preprocessing import LabelEncoder
-from models.classify_rf import ClassifyRF
-from models.utils.data_util import generate_data
-from models.utils.data_util import features_as_count_vectors, features_as_TF_IDF_vectors
+from src.classify_rf import ClassifyRF
+from src.utils.data_util import generate_data
+from src.utils.data_util import features_as_count_vectors, features_as_TF_IDF_vectors
 from permetrics.classification import ClassificationMetric
 from mealpy.swarm_based import WOA
 

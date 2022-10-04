@@ -5,8 +5,8 @@
 # --------------------------------------------------%
 
 from sklearn.preprocessing import LabelEncoder
-from models.classify_mlp import ClassifyMLP
-from models.utils.data_util import generate_data, features_as_count_vectors
+from src.classify_mlp import ClassifyMLP
+from src.utils.data_util import generate_data, features_as_count_vectors
 from permetrics.classification import ClassificationMetric
 from mealpy.swarm_based import WOA
 

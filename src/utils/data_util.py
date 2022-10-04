@@ -140,7 +140,7 @@ def features_as_topic_models():
     # topic_word = lda_model.components_
     # vocab = count_vect.get_feature_names()
     #
-    # # view the topic models
+    # # view the topic src
     # n_top_words = 10
     # topic_summaries = []
     # for i, topic_dist in enumerate(topic_word):

@@ -8,7 +8,7 @@
 Multi-layer perceptron (MLP)
 
 A neural network is a mathematical model that is designed to behave similar to biological neurons and nervous system.
-These models are used to recognize complex patterns and relationships that exists within a labelled data.
+These src are used to recognize complex patterns and relationships that exists within a labelled data.
 A shallow neural network (MLP) contains mainly three types of layers – input layer, hidden layer, and output layer.
 
 """
@@ -19,8 +19,9 @@ from mealpy.utils.problem import Problem
 
 class ClassifyMLP(Problem):
     def __init__(self, lb, ub, minmax, data=None, name="Multi-layer Perceptron", **kwargs):
-        super().__init__(lb, ub, minmax, data=data, **kwargs)  ## data is needed because when initialize the Problem class, we need to check the output of fitness
+        ## data is assigned first because when initialize the Problem class, we need to check the output of fitness
         self.data = data
+        super().__init__(lb, ub, minmax, **kwargs)
         self.name = name
 
     def decode_solution(self, solution):

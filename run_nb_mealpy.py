@@ -4,9 +4,9 @@
 #       Github: https://github.com/thieu1995        %                         
 # --------------------------------------------------%
 
-from models.classify_nb import ClassifyNB
-from models.utils.data_util import generate_data
-from models.utils.data_util import features_as_count_vectors, features_as_TF_IDF_vectors
+from src.classify_nb import ClassifyNB
+from src.utils.data_util import generate_data
+from src.utils.data_util import features_as_count_vectors, features_as_TF_IDF_vectors
 from permetrics.classification import ClassificationMetric
 from mealpy.swarm_based import WOA
 

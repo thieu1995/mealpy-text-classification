@@ -5,8 +5,8 @@
 # --------------------------------------------------%
 
 from keras import layers, models
-from models.utils.model_util import training_process
-from models.utils.data_util import generate_data, features_as_count_vectors
+from src.utils.model_util import training_process
+from src.utils.data_util import generate_data, features_as_count_vectors
 
 
 def create_model_architecture(input_size):

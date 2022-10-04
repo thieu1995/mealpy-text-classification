@@ -1,35 +1,34 @@
 #!/usr/bin/env python
-# Created by "Thieu" at 20:37, 01/10/2022 ----------%                                                                               
+# Created by "Thieu" at 07:47, 02/10/2022 ----------%                                                                               
 #       Email: nguyenthieu2102@gmail.com            %                                                    
 #       Github: https://github.com/thieu1995        %                         
 # --------------------------------------------------%
 
-"""
-Naive Bayes
-
-Naive Bayes is a classification technique based on Bayes’ Theorem with an assumption of independence among predictors.
-A Naive Bayes classifier assumes that the presence of a particular feature in a class is unrelated to the presence of any other feature
-"""
+from xgboost import XGBClassifier
 from permetrics.classification import ClassificationMetric
-from sklearn.naive_bayes import MultinomialNB
 from mealpy.utils.problem import Problem
 
 
-class ClassifyNB(Problem):
-    def __init__(self, lb, ub, minmax, data=None, name="Naive Bayes", **kwargs):
-        super().__init__(lb, ub, minmax, data=data, **kwargs)  ## data is needed because when initialize the Problem class, we need to check the output of fitness
+class ClassifyXGB(Problem):
+    def __init__(self, lb, ub, minmax, data=None, name="Extreme Gradient Boosting", **kwargs):
+        ## data is assigned first because when initialize the Problem class, we need to check the output of fitness
         self.data = data
+        super().__init__(lb, ub, minmax, **kwargs)
         self.name = name
 
     def decode_solution(self, solution):
+        ### https://xgboost.readthedocs.io/en/stable/parameter.html
         return {
-            "alpha": solution[0],
-            "fit_prior": bool(round(solution[1]))
+            "learning_rate": solution[0],
+            "min_split_loss": solution[1],
+            "max_depth": int(solution[2]),
+            "reg_lambda": solution[3],
+            "reg_alpha": solution[4]
         }
 
     def generate_trained_model(self, structure):
-        # print('Trying to generate trained model...')
-        model = MultinomialNB(alpha=structure["alpha"], fit_prior=["fit_prior"])
+        model = XGBClassifier(booster="gbtree", learning_rate=structure["learning_rate"], min_split_loss=structure["min_split_loss"],
+                              max_depth=structure["max_depth"], reg_lambda=structure["reg_lambda"], reg_alpha=structure["reg_alpha"])
         model.fit(self.data["X_train"], self.data["y_train"])
         return model
 
@@ -38,6 +37,7 @@ class ClassifyNB(Problem):
 
         # We take the loss value of validation set as a fitness value for selecting the best model demonstrate prediction
         y_pred = model.predict(self.data["X_valid"])
+
         evaluator = ClassificationMetric(self.data["y_valid"], y_pred, decimal=6)
         acc = evaluator.accuracy_score(average="macro")
         return 1 - acc

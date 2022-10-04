@@ -5,9 +5,9 @@
 # --------------------------------------------------%
 
 from sklearn.linear_model import LogisticRegression
-from models.utils.model_util import training_process
-from models.utils.data_util import generate_data
-from models.utils.data_util import features_as_count_vectors, features_as_TF_IDF_vectors
+from src.utils.model_util import training_process
+from src.utils.data_util import generate_data
+from src.utils.data_util import features_as_count_vectors, features_as_TF_IDF_vectors
 
 
 ## {"train_x": train_x, "y_train": train_y, "valid_x": valid_x, "y_valid": valid_y, "encoder": encoder, "trainDF": trainDF}
